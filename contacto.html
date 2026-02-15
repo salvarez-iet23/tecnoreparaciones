@@ -5,43 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto · TECNO REPARACIONES</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #000; color: #fff; font-family: 'Montserrat', sans-serif; }
+        body { background: #fef9f9; color: #4a4a4a; font-family: 'Quicksand', sans-serif; }
         .container { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
-        :root { --primary-red: #b35e5e; }
+        :root {
+            --rosa-pastel: #f8d7e3;
+            --rosa: #e6a4b4;
+            --azul-pastel: #a4d0e6;
+            --blanco: #ffffff;
+        }
         
-        .top-bar { padding: 20px 0; border-bottom: 1px solid rgba(180,100,100,0.3); }
+        .top-bar { padding: 20px 0; background: var(--blanco); border-bottom: 2px solid var(--rosa-pastel); }
         .elegant-header { display: flex; align-items: center; gap: 30px; }
-        .header-logo img { border-radius: 50%; border: 3px solid var(--primary-red); }
+        .header-logo img { border-radius: 50%; border: 4px solid var(--rosa); width: 100px; height: 100px; }
         .header-text { display: flex; flex-direction: column; }
-        .welcome-title { font-size: 2.5rem; color: #fff; font-family: 'Cormorant Garamond', serif; }
-        .welcome-title span { color: var(--primary-red); }
-        .by-line { font-size: 1.1rem; color: #aaa; letter-spacing: 1.5px; text-transform: uppercase; }
-        .by-line i { color: var(--primary-red); margin: 0 8px; }
+        .welcome-title { font-size: 2.5rem; color: #4a4a4a; font-family: 'Playfair Display', serif; }
+        .welcome-title span { color: var(--rosa); }
+        .by-line { font-size: 1.1rem; color: #888; }
+        .by-line i { color: var(--azul-pastel); margin: 0 8px; }
         
         .page-content { padding: 50px 0; }
-        .page-title { font-size: 3rem; color: #fff; margin-bottom: 40px; text-align: center; }
-        .page-title i { color: var(--primary-red); margin-right: 15px; }
+        .page-title { font-size: 3rem; color: var(--rosa); margin-bottom: 40px; text-align: center; }
         
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-        .contact-info { background: rgba(20,20,20,0.8); padding: 40px; border-radius: 10px; border: 1px solid rgba(180,100,100,0.2); }
-        .contact-info h3 { font-size: 2rem; margin-bottom: 30px; color: #fff; }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            background: var(--blanco);
+            border-radius: 40px;
+            padding: 50px;
+            border: 3px solid var(--rosa-pastel);
+        }
+        
+        .contact-info h3 { font-size: 2rem; margin-bottom: 30px; }
         .contact-item { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; }
-        .contact-icon { width: 50px; height: 50px; background: rgba(180,100,100,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--primary-red); }
+        .contact-icon { width: 50px; height: 50px; background: var(--rosa-pastel); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--rosa); }
         .contact-text { font-size: 1.2rem; }
-        .contact-text small { display: block; color: #888; font-size: 0.9rem; }
+        .contact-text small { display: block; color: #888; }
         
-        .whatsapp-large { display: inline-block; margin-top: 30px; padding: 18px 40px; background: #25D366; color: #fff; text-decoration: none; font-size: 1.3rem; border-radius: 5px; width: 100%; text-align: center; border: 2px solid #25D366; transition: all 0.3s; }
+        .whatsapp-large {
+            display: inline-block; margin-top: 30px; padding: 18px 40px;
+            background: #25D366; color: #fff; text-decoration: none; font-size: 1.3rem;
+            border-radius: 50px; width: 100%; text-align: center;
+            border: 2px solid #25D366;
+        }
         .whatsapp-large:hover { background: transparent; color: #25D366; }
-        .whatsapp-large i { margin-right: 10px; }
         
-        .back-button { display: inline-block; margin: 40px 0; padding: 12px 30px; background: transparent; border: 2px solid var(--primary-red); color: #fff; text-decoration: none; }
-        .back-button:hover { background: var(--primary-red); color: #000; }
+        .back-button {
+            display: inline-block; margin: 40px 0; padding: 12px 30px;
+            background: transparent; border: 2px solid var(--rosa); color: var(--rosa);
+            text-decoration: none; border-radius: 50px;
+        }
+        .back-button:hover { background: var(--rosa); color: var(--blanco); }
         
-        .footer { padding: 40px 0; border-top: 1px solid rgba(180,100,100,0.2); text-align: center; color: #888; }
-        .footer i { color: var(--primary-red); }
+        .footer { padding: 40px 0; background: var(--rosa-pastel); text-align: center; }
         
         @media (max-width: 800px) { .contact-grid { grid-template-columns: 1fr; } }
     </style>
@@ -52,7 +71,7 @@
     <div class="container">
         <div class="elegant-header">
             <div class="header-logo">
-                <img src="https://via.placeholder.com/100x100/1a1a1a/b35e5e?text=LOGO" alt="TECNO REPARACIONES" style="width: 100px; height: 100px;">
+                <img src="Logo.png" alt="TECNO REPARACIONES">
             </div>
             <div class="header-text">
                 <div class="welcome-title">TECNO <span>REPARACIONES</span></div>
@@ -63,7 +82,7 @@
 </div>
 
 <div class="container page-content">
-    <h1 class="page-title"><i class="fas fa-headset"></i> CONTACTO</h1>
+    <h1 class="page-title">🌸 Contáctame</h1>
     
     <div class="contact-grid">
         <div class="contact-info">
@@ -82,21 +101,18 @@
             </div>
             <div class="contact-item">
                 <div class="contact-icon"><i class="fas fa-credit-card"></i></div>
-                <div class="contact-text">Pago en línea o efectivo <small>Transferencia, tarjeta</small></div>
+                <div class="contact-text">Pago en línea o efectivo</div>
             </div>
             <a href="https://wa.me/521234567890" class="whatsapp-large" target="_blank"><i class="fab fa-whatsapp"></i> ENVIAR MENSAJE</a>
         </div>
         
         <div class="contact-info">
-            <h3>Envíanos un mensaje</h3>
-            <p style="color: #ccc; margin-bottom: 20px;">Escríbenos por WhatsApp para cualquier duda, pedido o cotización. Te responderemos a la brevedad.</p>
-            <div style="background: rgba(180,100,100,0.05); padding: 30px; border-radius: 8px; border: 1px dashed rgba(180,100,100,0.3);">
-                <p style="color: #b35e5e; font-size: 1.1rem;"><i class="fas fa-info-circle"></i> Incluye en tu mensaje:</p>
-                <ul style="margin-top: 15px; color: #aaa; list-style: none;">
-                    <li style="margin-bottom: 8px;">✓ Modelo de tu iPhone</li>
-                    <li style="margin-bottom: 8px;">✓ Producto que te interesa</li>
-                    <li style="margin-bottom: 8px;">✓ Dirección de entrega</li>
-                </ul>
+            <h3>¿Qué incluir en tu mensaje?</h3>
+            <div style="background: var(--rosa-pastel); padding: 30px; border-radius: 30px;">
+                <p style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--rosa);"></i> Modelo de tu iPhone</p>
+                <p style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--rosa);"></i> Producto que te interesa</p>
+                <p style="margin-bottom: 15px;"><i class="fas fa-check-circle" style="color: var(--rosa);"></i> Dirección de entrega</p>
+                <p><i class="fas fa-heart" style="color: var(--rosa);"></i> Te responderé a la brevedad</p>
             </div>
         </div>
     </div>
@@ -105,7 +121,7 @@
 </div>
 
 <div class="footer">
-    <i class="fas fa-copyright"></i> by Lizbeth Telles · TECNO REPARACIONES · envíos a domicilio
+    <i class="fas fa-copyright"></i> by Lizbeth Telles · TECNO REPARACIONES
 </div>
 
 </body>
