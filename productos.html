@@ -5,43 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos · TECNO REPARACIONES</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #000; color: #fff; font-family: 'Montserrat', sans-serif; }
+        body { background: #fef9f9; color: #4a4a4a; font-family: 'Quicksand', sans-serif; }
         .container { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
-        :root { --primary-red: #b35e5e; }
+        :root {
+            --rosa-pastel: #f8d7e3;
+            --rosa: #e6a4b4;
+            --azul-pastel: #a4d0e6;
+            --blanco: #ffffff;
+        }
         
-        .top-bar { padding: 20px 0; border-bottom: 1px solid rgba(180,100,100,0.3); }
+        .top-bar { padding: 20px 0; background: var(--blanco); box-shadow: 0 4px 20px rgba(230, 164, 180, 0.15); border-bottom: 2px solid var(--rosa-pastel); }
         .elegant-header { display: flex; align-items: center; gap: 30px; }
-        .header-logo img { border-radius: 50%; border: 3px solid var(--primary-red); }
+        .header-logo img { border-radius: 50%; border: 4px solid var(--rosa); width: 100px; height: 100px; object-fit: cover; }
         .header-text { display: flex; flex-direction: column; }
-        .welcome-title { font-size: 2.5rem; color: #fff; font-family: 'Cormorant Garamond', serif; }
-        .welcome-title span { color: var(--primary-red); }
-        .by-line { font-size: 1.1rem; color: #aaa; letter-spacing: 1.5px; text-transform: uppercase; }
-        .by-line i { color: var(--primary-red); margin: 0 8px; }
+        .welcome-title { font-size: 2.5rem; color: #4a4a4a; font-family: 'Playfair Display', serif; }
+        .welcome-title span { color: var(--rosa); }
+        .by-line { font-size: 1.1rem; color: #888; letter-spacing: 1.5px; }
+        .by-line i { color: var(--azul-pastel); margin: 0 8px; }
         
-        .page-content { padding: 50px 0; }
-        .page-title { font-size: 3rem; color: #fff; margin-bottom: 40px; text-align: center; }
-        .page-title i { color: var(--primary-red); margin-right: 15px; }
+        .page-content { padding: 40px 0; }
+        .page-title { font-size: 3rem; color: var(--rosa); margin-bottom: 40px; text-align: center; }
         
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
-        .product-card { background: rgba(20,20,20,0.8); border: 1px solid rgba(180,100,100,0.2); border-radius: 10px; overflow: hidden; transition: all 0.3s; }
-        .product-card:hover { border-color: var(--primary-red); transform: translateY(-5px); }
-        .product-image { height: 250px; background: #1a1a1a; display: flex; align-items: center; justify-content: center; }
-        .product-image i { font-size: 3rem; color: var(--primary-red); opacity: 0.5; }
-        .product-info { padding: 20px; }
-        .product-name { font-size: 1.5rem; font-family: 'Cormorant Garamond', serif; display: flex; justify-content: space-between; }
-        .product-price { color: var(--primary-red); font-weight: 500; }
-        .product-desc { color: #aaa; margin: 10px 0; font-size: 0.9rem; }
-        .product-button { display: inline-block; padding: 8px 20px; background: transparent; border: 1px solid var(--primary-red); color: #fff; text-decoration: none; font-size: 0.9rem; margin-top: 10px; transition: all 0.3s; }
-        .product-button:hover { background: var(--primary-red); color: #000; }
+        .categoria {
+            margin-bottom: 60px;
+            scroll-margin-top: 30px;
+        }
         
-        .back-button { display: inline-block; margin: 40px 0; padding: 12px 30px; background: transparent; border: 2px solid var(--primary-red); color: #fff; text-decoration: none; }
-        .back-button:hover { background: var(--primary-red); color: #000; }
+        .categoria-titulo {
+            font-size: 2.2rem;
+            color: var(--texto-oscuro);
+            border-bottom: 3px solid var(--azul-pastel);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
         
-        .footer { padding: 40px 0; border-top: 1px solid rgba(180,100,100,0.2); text-align: center; color: #888; }
-        .footer i { color: var(--primary-red); }
+        .categoria-titulo i {
+            color: var(--rosa);
+        }
+        
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .producto-card {
+            background: var(--blanco);
+            border: 2px solid var(--rosa-pastel);
+            border-radius: 30px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .producto-card:hover {
+            border-color: var(--azul-pastel);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(164, 208, 230, 0.2);
+        }
+        
+        .producto-imagen {
+            height: 200px;
+            background: var(--rosa-pastel);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .producto-imagen img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .producto-info {
+            padding: 20px;
+        }
+        
+        .producto-nombre {
+            font-size: 1.3rem;
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .producto-precio {
+            color: var(--rosa);
+            font-weight: 600;
+        }
+        
+        .producto-desc {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 10px 0;
+        }
+        
+        .producto-ventajas {
+            font-size: 0.85rem;
+            color: #888;
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        
+        .producto-ventajas li {
+            margin-bottom: 4px;
+        }
+        
+        .back-button {
+            display: inline-block; margin: 40px 0; padding: 12px 30px;
+            background: transparent; border: 2px solid var(--rosa); color: var(--rosa);
+            text-decoration: none; border-radius: 50px; transition: all 0.3s;
+        }
+        .back-button:hover { background: var(--rosa); color: var(--blanco); }
+        
+        .footer { padding: 40px 0; background: var(--rosa-pastel); text-align: center; color: #666; }
+        .footer i { color: var(--rosa); }
     </style>
 </head>
 <body>
@@ -50,7 +135,7 @@
     <div class="container">
         <div class="elegant-header">
             <div class="header-logo">
-                <img src="https://via.placeholder.com/100x100/1a1a1a/b35e5e?text=LOGO" alt="TECNO REPARACIONES" style="width: 100px; height: 100px;">
+                <img src="Logo.png" alt="TECNO REPARACIONES">
             </div>
             <div class="header-text">
                 <div class="welcome-title">TECNO <span>REPARACIONES</span></div>
@@ -61,37 +146,157 @@
 </div>
 
 <div class="container page-content">
-    <h1 class="page-title"><i class="fas fa-box-open"></i> PRODUCTOS</h1>
+    <h1 class="page-title">🌸 Todos los productos</h1>
     
-    <div class="products-grid">
-        <!-- Productos de ejemplo -->
-        <div class="product-card">
-            <div class="product-image"><i class="fas fa-shield-alt"></i></div>
-            <div class="product-info">
-                <div class="product-name">Mica Hidrogel <span class="product-price">$149</span></div>
-                <div class="product-desc">Para iPhone 11 al 15. Autoreparable, anti huellas.</div>
-                <a href="#" class="product-button">VER MÁS</a>
+    <!-- MICAS DE HIDROGEL -->
+    <div id="micas" class="categoria">
+        <h2 class="categoria-titulo"><i class="fas fa-mobile-alt"></i> Micas de Hidrogel</h2>
+        <div class="productos-grid">
+            <div class="producto-card">
+                <div class="producto-imagen"><img src="micaHidrogelHD.png" alt="Mica HD" onerror="this.src='https://via.placeholder.com/150x150/a4d0e6/ffffff?text=HD'"></div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Mica HD <span class="producto-precio">$149</span></div>
+                    <div class="producto-desc">Alta definición, ultra clara</div>
+                    <ul class="producto-ventajas">
+                        <li>✓ Anti huellas</li>
+                        <li>✓ Fácil instalación</li>
+                        <li>✓ Transparencia total</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image"><i class="fas fa-mobile-alt"></i></div>
-            <div class="product-info">
-                <div class="product-name">Funda Silicona <span class="product-price">$199</span></div>
-                <div class="product-desc">Protección militar, colores exclusivos.</div>
-                <a href="#" class="product-button">VER MÁS</a>
+            <div class="producto-card">
+                <div class="producto-imagen"><img src="micaHidrogelMate.png" alt="Mica Mate" onerror="this.src='https://via.placeholder.com/150x150/e6a4b4/ffffff?text=Mate'"></div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Mica Mate <span class="producto-precio">$159</span></div>
+                    <div class="producto-desc">Anti reflejos, tacto suave</div>
+                    <ul class="producto-ventajas">
+                        <li>✓ Sin reflejos</li>
+                        <li>✓ Sensación sedosa</li>
+                        <li>✓ Ideal para exteriores</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="product-card">
-            <div class="product-image"><i class="fas fa-bolt"></i></div>
-            <div class="product-info">
-                <div class="product-name">Cargador Rápido <span class="product-price">$299</span></div>
-                <div class="product-desc">20W original, cable incluido.</div>
-                <a href="#" class="product-button">VER MÁS</a>
+            <div class="producto-card">
+                <div class="producto-imagen"><img src="micaHidrogelBlueRay.png" alt="Mica Blue Ray" onerror="this.src='https://via.placeholder.com/150x150/a4d0e6/ffffff?text=Blue+Ray'"></div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Mica Blue Ray <span class="producto-precio">$179</span></div>
+                    <div class="producto-desc">Filtro de luz azul</div>
+                    <ul class="producto-ventajas">
+                        <li>✓ Protege la vista</li>
+                        <li>✓ Reduce fatiga</li>
+                        <li>✓ Autoreparable</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
     
-    <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> VOLVER</a>
+    <!-- FUNDAS -->
+    <div id="fundas" class="categoria">
+        <h2 class="categoria-titulo"><i class="fas fa-shield-alt"></i> Fundas para iPhone</h2>
+        <div class="productos-grid">
+            <div class="producto-card">
+                <div class="producto-imagen"><img src="fundaIphone13.png" alt="Funda iPhone 13" onerror="this.src='https://via.placeholder.com/150x150/f8d7e3/000000?text=iPhone+13'"></div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Funda iPhone 13 <span class="producto-precio">$199</span></div>
+                    <div class="producto-desc">Silicona pastel, protección suave</div>
+                </div>
+            </div>
+            <div class="producto-card">
+                <div class="producto-imagen"><img src="fundaIphone13promax.png" alt="Funda iPhone 13 Pro Max" onerror="this.src='https://via.placeholder.com/150x150/a4d0e6/000000?text=13+Pro+Max'"></div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Funda 13 Pro Max <span class="producto-precio">$229</span></div>
+                    <div class="producto-desc">Protección militar, colores pastel</div>
+                </div>
+            </div>
+            <div class="producto-card">
+                <div class="producto-imagen"><img src="fundas_varias.png" alt="Otras fundas" onerror="this.src='https://via.placeholder.com/150x150/e6a4b4/000000?text=Fundas'"></div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Otras fundas <span class="producto-precio">$179</span></div>
+                    <div class="producto-desc">Pregunta por tu modelo</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- AUDÍFONOS -->
+    <div id="audifonos" class="categoria">
+        <h2 class="categoria-titulo"><i class="fas fa-headphones"></i> Audífonos</h2>
+        <div class="productos-grid">
+            <div class="producto-card">
+                <div class="producto-imagen"><img src="audifonos.png" alt="Audífonos" onerror="this.src='https://via.placeholder.com/150x150/a4d0e6/ffffff?text=Audífonos'"></div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Audífonos inalámbricos <span class="producto-precio">$399</span></div>
+                    <div class="producto-desc">Bluetooth, estuche de carga</div>
+                </div>
+            </div>
+            <div class="producto-card">
+                <div class="producto-imagen"><img src="audifonos.png" alt="Audífonos cable" onerror="this.src='https://via.placeholder.com/150x150/e6a4b4/ffffff?text=Cable'"></div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Audífonos con cable <span class="producto-precio">$149</span></div>
+                    <div class="producto-desc">Sonido nítido, micrófono</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- BATERÍAS PORTÁTILES -->
+    <div id="baterias" class="categoria">
+        <h2 class="categoria-titulo"><i class="fas fa-battery-full"></i> Baterías Portátiles</h2>
+        <div class="productos-grid">
+            <div class="producto-card">
+                <div class="producto-imagen"><img src="bateriasportatiles.png" alt="Batería 10000mAh" onerror="this.src='https://via.placeholder.com/150x150/a4d0e6/ffffff?text=10000mAh'"></div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Power Bank 10000mAh <span class="producto-precio">$399</span></div>
+                    <div class="producto-desc">Carga rápida, 2 puertos</div>
+                </div>
+            </div>
+            <div class="producto-card">
+                <div class="producto-imagen"><img src="bateriasportatiles.png" alt="Batería 20000mAh" onerror="this.src='https://via.placeholder.com/150x150/e6a4b4/ffffff?text=20000mAh'"></div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Power Bank 20000mAh <span class="producto-precio">$599</span></div>
+                    <div class="producto-desc">Alta capacidad, carga rápida</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ACCESORIOS -->
+    <div id="accesorios" class="categoria">
+        <h2 class="categoria-titulo"><i class="fas fa-plug"></i> Accesorios</h2>
+        <div class="productos-grid">
+            <div class="producto-card">
+                <div class="producto-imagen"><img src="cargadores.png" alt="Cargador Tipo C" onerror="this.src='https://via.placeholder.com/150x150/a4d0e6/ffffff?text=Tipo+C'"></div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Cargador Tipo C <span class="producto-precio">$149</span></div>
+                    <div class="producto-desc">Carga rápida 20W</div>
+                </div>
+            </div>
+            <div class="producto-card">
+                <div class="producto-imagen"><img src="cargadores.png" alt="Cable Lightning" onerror="this.src='https://via.placeholder.com/150x150/e6a4b4/ffffff?text=Lightning'"></div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Cable Lightning <span class="producto-precio">$129</span></div>
+                    <div class="producto-desc">Certificado, 1 metro</div>
+                </div>
+            </div>
+            <div class="producto-card">
+                <div class="producto-imagen"><img src="accesorios_varios.png" alt="Memoria USB" onerror="this.src='https://via.placeholder.com/150x150/f8d7e3/000000?text=USB'"></div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Memoria USB 64GB <span class="producto-precio">$199</span></div>
+                    <div class="producto-desc">Plug and play</div>
+                </div>
+            </div>
+            <div class="producto-card">
+                <div class="producto-imagen"><img src="accesorios_varios.png" alt="Adaptador" onerror="this.src='https://via.placeholder.com/150x150/a4d0e6/ffffff?text=Adaptador'"></div>
+                <div class="producto-info">
+                    <div class="producto-nombre">Adaptador múltiple <span class="producto-precio">$179</span></div>
+                    <div class="producto-desc">Tipo C + USB</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> VOLVER A INICIO</a>
 </div>
 
 <div class="footer">
