@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECNO REPARACIONES · Lizbeth Telles</title>
+    <!-- Font Awesome 5 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Paleta de colores */
+        :root {
+            --primary-red: #b35e5e;
+            --dark-red: #8a3b3b;
+            --light-gray: #333333;
+            --medium-gray: #222222;
+        }
+
+        /* Header */
+        .top-bar {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(180, 100, 100, 0.3);
+        }
+
+        .elegant-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .header-logo {
+            width: auto;
+            height: auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary-red);
+            box-shadow: 0 8px 25px rgba(180, 100, 100, 0.3);
+            flex-shrink: 0;
+        }
+
+        .header-logo img {
+            display: block;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .header-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .welcome-title {
+            font-size: 2.8rem;
+            font-weight: 500;
+            color: #ffffff;
+            line-height: 1.2;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 1px;
+        }
+
+        .welcome-title span {
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        .by-line {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #cccccc;
+            letter-spacing: 2px;
+            margin-top: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .by-line i {
+            color: var(--primary-red);
+            margin: 0 8px;
+            font-size: 0.9rem;
+        }
+
+        .by-line strong {
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 50px 0 30px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid var(--primary-red);
+            box-shadow: 0 20px 40px rgba(180, 100, 100, 0.2);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero-text h2 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: #ffffff;
+            border-left: 4px solid var(--primary-red);
+            padding-left: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+
+        .elegant-button {
+            display: inline-block;
+            padding: 14px 35px;
+            background: transparent;
+            border: 2px solid var(--primary-red);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            margin-right: 15px;
+            margin-bottom: 10px;
+        }
+
+        .elegant-button:hover {
+            background: var(--primary-red);
+            color: #000000;
+        }
+
+        .elegant-button-solid {
+            background: var(--primary-red);
+            color: #000000;
+            border: 2px solid var(--primary-red);
+        }
+
+        .elegant-button-solid:hover {
+            background: transparent;
+            color: #ffffff;
+        }
+
+        /* Servicios */
+        .services-section {
+            padding: 60px 0;
+            background: rgba(10,10,10,0.7);
+            border-top: 1px solid rgba(180, 100, 100, 0.2);
+            border-bottom: 1px solid rgba(180, 100, 100, 0.2);
+            margin: 30px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 40px;
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .section-title i {
+            color: var(--primary-red);
+            margin-right: 15px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: rgba(20,20,20,0.8);
+            border: 1px solid rgba(180, 100, 100, 0.2);
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-red);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(180, 100, 100, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .service-card p {
+            color: #aaaaaa;
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            color: var(--primary-red);
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .service-link i {
+            transition: transform 0.3s ease;
+            margin-left: 5px;
+        }
+
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Combo destacado */
+        .combo-section {
+            padding: 40px 0;
+        }
+
+        .combo-card {
+            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+            border: 2px solid var(--primary-red);
+            border-radius: 15px;
+            padding: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            box-shadow: 0 20px 40px rgba(180, 100, 100, 0.2);
+        }
+
+        .combo-content h3 {
+            font-size: 2.8rem;
+            color: var(--primary-red);
+            margin-bottom: 20px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .combo-content ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .combo-content li {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            color: #dddddd;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .combo-content li i {
+            color: var(--primary-red);
+            font-size: 1rem;
+        }
+
+        .combo-price {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .combo-price span {
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        .combo-image {
+            text-align: center;
+        }
+
+        .combo-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            border: 2px solid var(--primary-red);
+        }
+
+        /* Características */
+        .features-section {
+            padding: 40px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 25px;
+            background: rgba(20,20,20,0.5);
+            border-radius: 8px;
+            border: 1px solid rgba(180, 100, 100, 0.1);
+        }
+
+        .feature-item i {
+            font-size: 2rem;
+            color: var(--primary-red);
+            margin-bottom: 15px;
+        }
+
+        .feature-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .feature-item p {
+            color: #888888;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(180, 100, 100, 0.2);
+            text-align: center;
+            color: #888888;
+        }
+
+        .footer i {
+            color: var(--primary-red);
+            margin: 0 5px;
+        }
+
+        .footer strong {
+            color: #ffffff;
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid, .services-grid, .combo-card, .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="top-bar">
+    <div class="container">
+        <div class="elegant-header">
+            <div class="header-logo">
+                <img src="https://via.placeholder.com/180x180/1a1a1a/b35e5e?text=LOGO" alt="TECNO REPARACIONES" style="width: 120px; height: 120px; border-radius: 50%;">
+            </div>
+            <div class="header-text">
+                <div class="welcome-title">
+                    TECNO <span>REPARACIONES</span>
+                </div>
+                <div class="by-line">
+                    <i class="fas fa-minus"></i> by <strong>Lizbeth Telles</strong> <i class="fas fa-minus"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- HERO SECTION -->
+<div class="hero-section">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/600x600/222222/b35e5e?text=iPhone+Protección" alt="iPhone Protección">
+            </div>
+            <div class="hero-text">
+                <h2>Protección premium para tu iPhone</h2>
+                <p>Micahidrogel, fundas de alta calidad y accesorios exclusivos. Entregas a domicilio en toda la ciudad. Todo en línea, fácil y seguro.</p>
+                <a href="productos.html" class="elegant-button"><i class="fas fa-mobile-alt"></i> VER PRODUCTOS</a>
+                <a href="contacto.html" class="elegant-button elegant-button-solid"><i class="fas fa-whatsapp"></i> CONTACTO</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SERVICIOS -->
+<div class="services-section">
+    <div class="container">
+        <h2 class="section-title"><i class="fas fa-tools"></i> Nuestros servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Micahidrogel</h3>
+                <p>Protección invisible de alta resistencia para la pantalla de tu iPhone. Auto reparables y anti impactos.</p>
+                <a href="productos.html#micas" class="service-link">VER MICAS <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Fundas</h3>
+                <p>Diseños exclusivos para iPhone. Protección militar, silicona, cuero y más. Todos los modelos disponibles.</p>
+                <a href="productos.html#fundas" class="service-link">VER FUNDAS <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                <h3>Accesorios</h3>
+                <p>Cargadores rápidos, cables reforzados, soportes para auto y más. Todo lo que tu iPhone necesita.</p>
+                <a href="productos.html#accesorios" class="service-link">VER ACCESORIOS <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- COMBO DESTACADO -->
+<div class="combo-section">
+    <div class="container">
+        <div class="combo-card">
+            <div class="combo-content">
+                <h3># COMBO PROTECCIÓN</h3>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Precio especial</li>
+                    <li><i class="fas fa-check-circle"></i> Ideal para cuidar tu celular</li>
+                    <li><i class="fas fa-check-circle"></i> Ahorra llevando ambos</li>
+                    <li><i class="fas fa-check-circle"></i> Pregunta por tu modelo</li>
+                </ul>
+                <div class="combo-price">Desde <span>$299 MXN</span></div>
+                <a href="combo-proteccion.html" class="elegant-button"><i class="fas fa-gift"></i> VER COMBO</a>
+            </div>
+            <div class="combo-image">
+                <img src="https://via.placeholder.com/400x400/222222/b35e5e?text=Funda+Mica" alt="Combo Protección">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CARACTERÍSTICAS -->
+<div class="features-section">
+    <div class="container">
+        <div class="features-grid">
+            <div class="feature-item">
+                <i class="fas fa-truck"></i>
+                <h4>Envío a domicilio</h4>
+                <p>Recibe en la comodidad de tu hogar</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-credit-card"></i>
+                <h4>Pago en línea</h4>
+                <p>Transferencia, tarjeta o efectivo</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-whatsapp"></i>
+                <h4>Atención personal</h4>
+                <p>Resolvemos todas tus dudas</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Calidad garantizada</h4>
+                <p>Productos 100% originales</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <i class="fas fa-copyright"></i> by <strong>Lizbeth Telles</strong> · TECNO REPARACIONES · protección para iPhone · envíos a domicilio
+</div>
+
+</body>
+</html>

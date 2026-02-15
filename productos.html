@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos · TECNO REPARACIONES</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #000; color: #fff; font-family: 'Montserrat', sans-serif; }
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 40px; }
+        :root { --primary-red: #b35e5e; }
+        
+        .top-bar { padding: 20px 0; border-bottom: 1px solid rgba(180,100,100,0.3); }
+        .elegant-header { display: flex; align-items: center; gap: 30px; }
+        .header-logo img { border-radius: 50%; border: 3px solid var(--primary-red); }
+        .header-text { display: flex; flex-direction: column; }
+        .welcome-title { font-size: 2.5rem; color: #fff; font-family: 'Cormorant Garamond', serif; }
+        .welcome-title span { color: var(--primary-red); }
+        .by-line { font-size: 1.1rem; color: #aaa; letter-spacing: 1.5px; text-transform: uppercase; }
+        .by-line i { color: var(--primary-red); margin: 0 8px; }
+        
+        .page-content { padding: 50px 0; }
+        .page-title { font-size: 3rem; color: #fff; margin-bottom: 40px; text-align: center; }
+        .page-title i { color: var(--primary-red); margin-right: 15px; }
+        
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+        .product-card { background: rgba(20,20,20,0.8); border: 1px solid rgba(180,100,100,0.2); border-radius: 10px; overflow: hidden; transition: all 0.3s; }
+        .product-card:hover { border-color: var(--primary-red); transform: translateY(-5px); }
+        .product-image { height: 250px; background: #1a1a1a; display: flex; align-items: center; justify-content: center; }
+        .product-image i { font-size: 3rem; color: var(--primary-red); opacity: 0.5; }
+        .product-info { padding: 20px; }
+        .product-name { font-size: 1.5rem; font-family: 'Cormorant Garamond', serif; display: flex; justify-content: space-between; }
+        .product-price { color: var(--primary-red); font-weight: 500; }
+        .product-desc { color: #aaa; margin: 10px 0; font-size: 0.9rem; }
+        .product-button { display: inline-block; padding: 8px 20px; background: transparent; border: 1px solid var(--primary-red); color: #fff; text-decoration: none; font-size: 0.9rem; margin-top: 10px; transition: all 0.3s; }
+        .product-button:hover { background: var(--primary-red); color: #000; }
+        
+        .back-button { display: inline-block; margin: 40px 0; padding: 12px 30px; background: transparent; border: 2px solid var(--primary-red); color: #fff; text-decoration: none; }
+        .back-button:hover { background: var(--primary-red); color: #000; }
+        
+        .footer { padding: 40px 0; border-top: 1px solid rgba(180,100,100,0.2); text-align: center; color: #888; }
+        .footer i { color: var(--primary-red); }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="container">
+        <div class="elegant-header">
+            <div class="header-logo">
+                <img src="https://via.placeholder.com/100x100/1a1a1a/b35e5e?text=LOGO" alt="TECNO REPARACIONES" style="width: 100px; height: 100px;">
+            </div>
+            <div class="header-text">
+                <div class="welcome-title">TECNO <span>REPARACIONES</span></div>
+                <div class="by-line"><i class="fas fa-minus"></i> by Lizbeth Telles <i class="fas fa-minus"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container page-content">
+    <h1 class="page-title"><i class="fas fa-box-open"></i> PRODUCTOS</h1>
+    
+    <div class="products-grid">
+        <!-- Productos de ejemplo -->
+        <div class="product-card">
+            <div class="product-image"><i class="fas fa-shield-alt"></i></div>
+            <div class="product-info">
+                <div class="product-name">Mica Hidrogel <span class="product-price">$149</span></div>
+                <div class="product-desc">Para iPhone 11 al 15. Autoreparable, anti huellas.</div>
+                <a href="#" class="product-button">VER MÁS</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image"><i class="fas fa-mobile-alt"></i></div>
+            <div class="product-info">
+                <div class="product-name">Funda Silicona <span class="product-price">$199</span></div>
+                <div class="product-desc">Protección militar, colores exclusivos.</div>
+                <a href="#" class="product-button">VER MÁS</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image"><i class="fas fa-bolt"></i></div>
+            <div class="product-info">
+                <div class="product-name">Cargador Rápido <span class="product-price">$299</span></div>
+                <div class="product-desc">20W original, cable incluido.</div>
+                <a href="#" class="product-button">VER MÁS</a>
+            </div>
+        </div>
+    </div>
+    
+    <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> VOLVER</a>
+</div>
+
+<div class="footer">
+    <i class="fas fa-copyright"></i> by Lizbeth Telles · TECNO REPARACIONES
+</div>
+
+</body>
+</html>
